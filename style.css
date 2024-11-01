@@ -1,0 +1,43 @@
+body { background-color: #ffffff; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; font-family: Arial, sans-serif; overflow: hidden; /* Para evitar scroll indesejado */ background: linear-gradient(to right, #6a11cb, #2575fc); background-size: cover; background-repeat: no-repeat; animation: changeBackground 10s infinite; } @keyframes changeBackground { 0% { background-image: url('../images/sunny.jpg'); } 25% { background-image: url('../images/cloudy.jpg'); } 50% { background-image: url('../images/rainy.jpg'); } 75% { background-image: url('../images/snowy.jpg'); } 100% { background-image: url('../images/sunny.jpg'); } } .container { background-color: #ffffff; color: #000; text-align: center; padding: 40px; border-radius: 10px; width: 70%; display: flex; flex-direction: column; align-items: center; position: relative; /* Para posicionamento absoluto dos números binários */ } .binary-container { position: relative; /* Para garantir que os números binários fiquem dentro do container */ overflow: hidden; /* Para garantir que os números binários não saiam da tela */ z-index: 1; /* Certifique-se de que este índice z seja inferior ao do GIF */ } .gif { z-index: 2; /* Certifique-se de que o índice z do GIF seja superior ao dos números binários */ position: relative; /* Para manter o posicionamento correto */ } .binary-code { position: absolute; font-size: 12px; color: #c2b5b5; opacity: 0.3; /* Transparência dos números binários */ white-space: nowrap; animation: moveCodeVertical 5s linear infinite; z-index: -1; /* Certifique-se de que os números binários fiquem atrás do GIF */ } @keyframes moveCodeVertical { 0% { transform: translateY(0%); } 100% { transform: translateY(100%); } } .header { display: flex; align-items: center; width: 100%; margin-bottom: 20px; } .logo { max-width: 150px; margin-right: 20px; } .text { text-align: left; color: rgb(3, 12, 12); } h1 { font-size: 40px; } p { font-size: 18px; font-family: Verdana, Geneva, Tahoma, sans-serif; font-variation-settings: 40; margin-top: -20px; } .menu { width: 60%; margin-bottom: 20px; background-color: #fffdfd; } .menu ul { list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #fdfbfb; } .menu ul li { float: left; } .menu ul li a { display: block; color: rgb(7, 7, 7); text-align: center; padding: 14px 16px; text-decoration: none; font-weight: bold; /* Negrito no menu */ } .menu ul li a:hover { background-color: #81f0c5; } .menu ul li .botao-acesse { background-color: #81f0c5; /* Cor verde igual ao hover do menu */ color: rgb(3, 90, 47); border-radius: 5px; margin-left: 30px; /* Espaçamento entre o link CONTATO e o botão ACESSE */ font-weight: bold; /* Negrito no botão */ } .menu ul li .botao-acesse:hover { background-color: #66d0a6; /* Cor ao passar o mouse */ } .gif, .clock-container { width: 100%; margin-bottom: 20px; } .gif img { max-width: 80%; height: auto; border-radius: 10px; } .clock-container { text-align: center; display: flex; justify-content: center; align-items: center; font-size: 16px; color: #f7f6f5; margin-top: -20px; } .clock { padding: 10px; margin: 0 10px; border: 2px solid #fcfcfb; border-radius: 10px; background-color: #222; box-shadow: 0 0 10px rgba(99, 99, 98, 0.5); font-size: 28px; } .separator { font-size: 18px; color: #080701; } @keyframes colorChange { from { color: #000; } to { color: #ff6347
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        align-items: center;
+    }
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    p {
+        font-size: 16px;
+    }
+    .gif img {
+        width: 100%;
+    }
+    .clock-container {
+        flex-direction: column;
+    }
+    .clock {
+        margin: 10px 0;
+    }
+    .separator {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+    p {
+        font-size: 14px;
+    }
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+}
